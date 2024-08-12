@@ -16,11 +16,11 @@ sums as (
  select 
   to_char(date_field,'mm') m, 
   to_char(date_field,'yyyy') y,
-  count(revenue) cnt
+  sum(revenue) sum_revenue
  from data_table
  where date_field >= '01/01/2023'
  group by to_char(date_field,'mm'), to_char(date_field,'yyyy')
 )
  
- select ds.y, ds.m, ds.nbr_days, sums.cnt, sums.cnt/ds.nbr_days avg 
+ select ds.y, ds.m, ds.nbr_days, sums.sum_revenue, sums.sum_revenue/ds.nbr_days avg 
  from ds, sums where ds.m = sums.m and ds.y = sums.y
