@@ -16,7 +16,7 @@ sums as (
  select 
   to_char(date_field,'mm') m, 
   to_char(date_field,'yyyy') y,
-  count(patcdin) cnt
+  count(revenue) cnt
  from data_table
  where date_field >= '01/01/2023'
  group by to_char(date_field,'mm'), to_char(date_field,'yyyy')
