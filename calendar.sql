@@ -9,7 +9,7 @@ ds as (
   m, y,
   to_date(m||'/'||y, 'mm/yyyy') s_date,
   last_day(to_date(m||'/'||y, 'mm/yyyy')) l_date,
-  last_day(to_date(m||'/'||y, 'mm/yyyy')) - to_date(m||'/'||y, 'mm/yyyy') + 1 nbr_days
+  last_day(to_date(m||'/'||y, 'mm/yyyy')) - to_date(m||'/'||y, 'mm/yyyy') + 1 nbr_days  -- calculate number of days per month
  from d),
  
 sums as (
@@ -22,5 +22,5 @@ sums as (
  group by to_char(date_field,'mm'), to_char(date_field,'yyyy')
 )
  
- select ds.y, ds.m, ds.nbr_days, sums.sum_revenue, sums.sum_revenue/ds.nbr_days avg 
+ select ds.y, ds.m, ds.nbr_days, sums.sum_revenue, sums.sum_revenue/ds.nbr_days avg   -- calculate average monthly revenue
  from ds, sums where ds.m = sums.m and ds.y = sums.y
