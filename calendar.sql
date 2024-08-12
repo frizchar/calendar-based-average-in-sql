@@ -1,7 +1,7 @@
 with d as (
- select distinct to_char(date,'mm') m, to_char(date,'yyyy') y 
- from table 
- where date >= '01/01/2023'
+ select distinct to_char(date_field,'mm') m, to_char(date_field,'yyyy') y 
+ from data_table 
+ where date_field >= '01/01/2023'
 ),
 
 ds as (
@@ -14,12 +14,12 @@ ds as (
  
 sums as (
  select 
-  to_char(date,'mm') m, 
-  to_char(date,'yyyy') y,
+  to_char(date_field,'mm') m, 
+  to_char(date_field,'yyyy') y,
   count(patcdin) cnt
- from table
- where date >= '01/01/2023'
- group by to_char(date,'mm'), to_char(date,'yyyy')
+ from data_table
+ where date_field >= '01/01/2023'
+ group by to_char(date_field,'mm'), to_char(date_field,'yyyy')
 )
  
  select ds.y, ds.m, ds.nbr_days, sums.cnt, sums.cnt/ds.nbr_days avg 
