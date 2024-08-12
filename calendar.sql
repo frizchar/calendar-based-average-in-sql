@@ -1,7 +1,7 @@
-with d as (
+with d as ( 
  select distinct to_char(date_field,'mm') m, to_char(date_field,'yyyy') y 
  from data_table 
- where date_field >= '01/01/2023'
+ where date_field >= '01/01/2023'                                                       -- calendar start date
 ),
 
 ds as (
