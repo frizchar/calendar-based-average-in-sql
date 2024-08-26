@@ -24,7 +24,7 @@ sums as (
  group by to_char(date_field,'mm'), to_char(date_field,'yyyy')
 )
  
- select                                             -- this final query calculates the average monthly revenue
+ select                                             -- this final query calculates the average daily revenue
   ds.y, ds.m, ds.nbr_days, sums.sum_revenue, 
   sums.sum_revenue/ds.nbr_days avg   
  from ds, sums where ds.m = sums.m and ds.y = sums.y
