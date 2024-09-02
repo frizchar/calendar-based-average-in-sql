@@ -1,7 +1,7 @@
 # Calendar based average in SQL
 
 ### Overview
-We provide SQL code to calculate the average daily revenue of transactional data for each month based on formula:
+We provide SQL code to calculate the _average daily revenue_ of transactional data per month, based on formula:
 <p align="center">
 $average \ daily \ revenue = \frac{total \ monthly \ revenue}{number \ of \ days \ in \ the \ month}$
 </p>
