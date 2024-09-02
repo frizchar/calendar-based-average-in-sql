@@ -13,7 +13,7 @@ $average \ daily \ revenue|_{\ JANUARY, \ 2024} = \frac{total \ monthly \ revenu
 
 ### Assumptions
 1. We assume the data is stored in table ```data_table```, inlcuding the following columns:
-  * ```date_field``` : contains the transaction date
-  * ```revenue_field``` : contains the revenue per transaction
+  * ```date_field``` :: DATE :: contains the transaction date
+  * ```revenue_field``` :: NUMBER :: contains the revenue per transaction
 2. We exclude from all calculations the running month
 3. This SQL code has been written for _Oracle_ database
