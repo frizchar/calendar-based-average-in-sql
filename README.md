@@ -8,7 +8,7 @@ $average \ daily \ revenue = \frac{total \ monthly \ revenue}{number \ of \ days
 
 i.e. for _January 2024_, the average daily revenue is calculated as in:
 <p align="center">
-$average \ daily \ revenue|_{\ JANUARY, \ 2024} = \frac{total \ monthly \ revenue|_{\ JANUARY, 2024}}{31}$
+$average \ daily \ revenue|_{\ JANUARY, \ 2024} = \frac{JANUARY \ 2024 \ revenue}{31}$
 </p>
 
 ### Assumptions
