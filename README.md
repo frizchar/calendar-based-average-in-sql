@@ -1,11 +1,12 @@
 # Calendar based average in SQL
 
+### Overview
 We provide SQL code to calculate the average daily revenue of transactional data for each month based on formula:
 <p align="center">
 $average \ daily \ revenue = \frac{total \ monthly \ revenue}{number \ of \ days \ in \ the \ month}$
 </p>
 
-i.e. for _January_ of 2024, the average daily revenue is calculated as in:
+i.e. for _January 2024_, the average daily revenue is calculated as in:
 <p align="center">
 $average \ daily \ revenue|_{\ JANUARY, \ 2024} = \frac{total \ monthly \ revenue|_{\ JANUARY, 2024}}{31}$
 </p>
@@ -15,5 +16,4 @@ $average \ daily \ revenue|_{\ JANUARY, \ 2024} = \frac{total \ monthly \ revenu
   * ```date_field``` : contains the transaction date
   * ```revenue``` : contains the revenue per transaction
 2. We exclude from all calculations the running month
-
-This SQL code has been written for _Oracle_ database.
+3. This SQL code has been written for _Oracle_ database
