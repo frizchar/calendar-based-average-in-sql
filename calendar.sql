@@ -1,5 +1,5 @@
 with d as ( 
- select distinct                                    -- this subquery (d) gets month and year values from data_table
+ select distinct                                    -- CTE (d) gets month and year values from data_table
   to_char(date_field,'mm') m, 
   to_char(date_field,'yyyy') y 
  from data_table 
@@ -9,7 +9,7 @@ with d as (
 ),
 
 ds as (
- select                                             -- this subquery (ds) calculates the number of days per month based on subquery (d)
+ select                                             -- CTE (ds) calculates the number of days per month based on subquery (d)
   m, y,
   to_date(m||'/'||y, 'mm/yyyy') s_date,
   last_day(to_date(m||'/'||y, 'mm/yyyy')) l_date,
@@ -17,7 +17,7 @@ ds as (
  from d),
  
 sums as (
- select                                             -- this subquery (sums) calculates the monthly revenue total
+ select                                             -- CTE (sums) calculates the monthly revenue total
   to_char(date_field,'mm') m, 
   to_char(date_field,'yyyy') y,
   sum(revenue) sum_revenue
@@ -28,7 +28,7 @@ sums as (
  group by to_char(date_field,'mm'), to_char(date_field,'yyyy')
 )
  
- select                                             -- this final query calculates the average daily revenue
+ select                                             -- final query calculates the average daily revenue
   ds.y, ds.m, ds.nbr_days, sums.sum_revenue, 
   sums.sum_revenue/ds.nbr_days avg   
  from ds, sums where ds.m = sums.m and ds.y = sums.y
