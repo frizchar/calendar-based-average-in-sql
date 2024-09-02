@@ -12,7 +12,8 @@ $average \ daily \ revenue|_{\ JANUARY, \ 2024} = \frac{JANUARY \ 2024 \ revenue
 </p>
 
 ### Assumptions
-1. We assume the data is stored in table ```data_table```, inlcuding the following columns:
+We make the following assumptions:
+1. The data is stored in table ```data_table```, inlcuding the following columns:
   * ```date_field``` :: DATE :: contains the transaction date
   * ```revenue_field``` :: NUMBER :: contains the revenue per transaction
 2. We exclude from all calculations the running month
