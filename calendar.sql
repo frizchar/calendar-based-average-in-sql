@@ -20,7 +20,7 @@ sums as (
  select                                             -- CTE (sums) calculates the monthly revenue total
   to_char(date_field,'mm') m, 
   to_char(date_field,'yyyy') y,
-  sum(revenue) sum_revenue
+  sum(revenue_field) sum_revenue
  from data_table
  where 
   date_field >= '01/01/2023'
