@@ -3,7 +3,9 @@ with d as (
   to_char(date_field,'mm') m, 
   to_char(date_field,'yyyy') y 
  from data_table 
- where date_field >= '01/01/2023'                   -- calendar start date
+ where 
+  date_field >= '01/01/2023'                        -- calendar start date
+  and date < trunc(sysdate,'mm')                    -- exclude running month from calculations
 ),
 
 ds as (
@@ -20,7 +22,9 @@ sums as (
   to_char(date_field,'yyyy') y,
   sum(revenue) sum_revenue
  from data_table
- where date_field >= '01/01/2023'
+ where 
+  date_field >= '01/01/2023'
+  and date < trunc(sysdate,'mm')                    -- exclude running month from calculations
  group by to_char(date_field,'mm'), to_char(date_field,'yyyy')
 )
  
